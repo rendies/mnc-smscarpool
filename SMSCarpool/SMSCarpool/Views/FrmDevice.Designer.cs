@@ -102,12 +102,32 @@
             this.label23 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBox18 = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.textBox19 = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.button10 = new System.Windows.Forms.Button();
+            this.label26 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
+            this.tabMemoryPesan.SuspendLayout();
             this.tabDevice.SuspendLayout();
+            this.tabKirimPesan.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -570,10 +590,14 @@
             // 
             // tabMemoryPesan
             // 
+            this.tabMemoryPesan.Controls.Add(this.dataGridView1);
+            this.tabMemoryPesan.Controls.Add(this.button9);
+            this.tabMemoryPesan.Controls.Add(this.button8);
+            this.tabMemoryPesan.Controls.Add(this.button7);
             this.tabMemoryPesan.Location = new System.Drawing.Point(4, 25);
             this.tabMemoryPesan.Name = "tabMemoryPesan";
             this.tabMemoryPesan.Padding = new System.Windows.Forms.Padding(3);
-            this.tabMemoryPesan.Size = new System.Drawing.Size(406, 588);
+            this.tabMemoryPesan.Size = new System.Drawing.Size(526, 588);
             this.tabMemoryPesan.TabIndex = 1;
             this.tabMemoryPesan.Text = "2. Memory Pesan";
             this.tabMemoryPesan.UseVisualStyleBackColor = true;
@@ -591,9 +615,15 @@
             // 
             // tabKirimPesan
             // 
+            this.tabKirimPesan.Controls.Add(this.label26);
+            this.tabKirimPesan.Controls.Add(this.button10);
+            this.tabKirimPesan.Controls.Add(this.textBox19);
+            this.tabKirimPesan.Controls.Add(this.label25);
+            this.tabKirimPesan.Controls.Add(this.textBox18);
+            this.tabKirimPesan.Controls.Add(this.label24);
             this.tabKirimPesan.Location = new System.Drawing.Point(4, 25);
             this.tabKirimPesan.Name = "tabKirimPesan";
-            this.tabKirimPesan.Size = new System.Drawing.Size(406, 588);
+            this.tabKirimPesan.Size = new System.Drawing.Size(526, 588);
             this.tabKirimPesan.TabIndex = 2;
             this.tabKirimPesan.Text = "3. Kirim Pesan";
             this.tabKirimPesan.UseVisualStyleBackColor = true;
@@ -890,6 +920,154 @@
             this.listBox1.Size = new System.Drawing.Size(360, 69);
             this.listBox1.TabIndex = 38;
             // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button7.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.Location = new System.Drawing.Point(16, 14);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(103, 33);
+            this.button7.TabIndex = 38;
+            this.button7.Text = "Refresh";
+            this.button7.UseVisualStyleBackColor = false;
+            // 
+            // button8
+            // 
+            this.button8.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button8.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button8.Location = new System.Drawing.Point(125, 14);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(103, 33);
+            this.button8.TabIndex = 39;
+            this.button8.Text = "Process";
+            this.button8.UseVisualStyleBackColor = false;
+            // 
+            // button9
+            // 
+            this.button9.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button9.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button9.Location = new System.Drawing.Point(234, 14);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(103, 33);
+            this.button9.TabIndex = 40;
+            this.button9.Text = "Hapus";
+            this.button9.UseVisualStyleBackColor = false;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6,
+            this.Column7});
+            this.dataGridView1.Location = new System.Drawing.Point(16, 64);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(494, 511);
+            this.dataGridView1.TabIndex = 41;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "No.";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Status";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Lokasi";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Waktu";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Nomor Telepon";
+            this.Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Jenis";
+            this.Column6.Name = "Column6";
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Isi Pesan";
+            this.Column7.Name = "Column7";
+            // 
+            // textBox18
+            // 
+            this.textBox18.Location = new System.Drawing.Point(133, 35);
+            this.textBox18.Name = "textBox18";
+            this.textBox18.Size = new System.Drawing.Size(360, 20);
+            this.textBox18.TabIndex = 13;
+            this.textBox18.TextChanged += new System.EventHandler(this.textBox18_TextChanged);
+            // 
+            // label24
+            // 
+            this.label24.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(59, 37);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(68, 15);
+            this.label24.TabIndex = 12;
+            this.label24.Text = "Nomor HP :";
+            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // textBox19
+            // 
+            this.textBox19.Location = new System.Drawing.Point(133, 61);
+            this.textBox19.Multiline = true;
+            this.textBox19.Name = "textBox19";
+            this.textBox19.Size = new System.Drawing.Size(360, 123);
+            this.textBox19.TabIndex = 15;
+            // 
+            // label25
+            // 
+            this.label25.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(64, 63);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(63, 15);
+            this.label25.TabIndex = 14;
+            this.label25.Text = "Isi Pesan :";
+            this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // button10
+            // 
+            this.button10.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button10.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button10.Location = new System.Drawing.Point(133, 208);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(103, 33);
+            this.button10.TabIndex = 39;
+            this.button10.Text = "Kirim";
+            this.button10.UseVisualStyleBackColor = false;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(432, 188);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(61, 13);
+            this.label26.TabIndex = 40;
+            this.label26.Text = "1,160,GSM";
+            // 
             // FrmDevice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -912,9 +1090,13 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
+            this.tabMemoryPesan.ResumeLayout(false);
             this.tabDevice.ResumeLayout(false);
+            this.tabKirimPesan.ResumeLayout(false);
+            this.tabKirimPesan.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -995,5 +1177,22 @@
         private System.Windows.Forms.TextBox textBox15;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.TextBox textBox18;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.TextBox textBox19;
+        private System.Windows.Forms.Label label25;
     }
 }
