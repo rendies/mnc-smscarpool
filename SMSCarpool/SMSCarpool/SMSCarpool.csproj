@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.9.12.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.6.9.12\lib\net40\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -45,16 +48,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\DBConnectionModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Presenters\FrmDevicePresenter.cs" />
+    <Compile Include="Services\DBConnectionService.cs" />
+    <Compile Include="Services\IDBConnectionService.cs" />
     <Compile Include="Views\FrmDevice.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\FrmDevice.Designer.cs">
       <DependentUpon>FrmDevice.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\FrmKonfigurasi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmKonfigurasi.Designer.cs">
+      <DependentUpon>FrmKonfigurasi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\IFrmDevice.cs" />
+    <Compile Include="Views\IFrmKonfigurasi.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -67,6 +80,11 @@
     <EmbeddedResource Include="Views\FrmDevice.resx">
       <DependentUpon>FrmDevice.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\FrmKonfigurasi.resx">
+      <DependentUpon>FrmKonfigurasi.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -77,9 +95,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-    <Folder Include="Services\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
