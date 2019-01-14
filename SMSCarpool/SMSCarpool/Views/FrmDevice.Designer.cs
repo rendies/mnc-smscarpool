@@ -34,6 +34,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label28 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.checkBox6 = new System.Windows.Forms.CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -70,9 +71,12 @@
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel5 = new System.Windows.Forms.ToolStripStatusLabel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabDevice = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label27 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.button6 = new System.Windows.Forms.Button();
             this.textBox17 = new System.Windows.Forms.TextBox();
@@ -119,10 +123,6 @@
             this.label25 = new System.Windows.Forms.Label();
             this.textBox18 = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
-            this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel5 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -224,6 +224,15 @@
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Setting Device";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(403, 446);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(66, 15);
+            this.label28.TabIndex = 41;
+            this.label28.Text = "1,160,GSM";
             // 
             // textBox5
             // 
@@ -580,6 +589,21 @@
             this.toolStripStatusLabel3.Size = new System.Drawing.Size(50, 23);
             this.toolStripStatusLabel3.Text = "INS";
             // 
+            // toolStripStatusLabel4
+            // 
+            this.toolStripStatusLabel4.AutoSize = false;
+            this.toolStripStatusLabel4.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
+            this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
+            this.toolStripStatusLabel4.Size = new System.Drawing.Size(85, 23);
+            this.toolStripStatusLabel4.Text = "13/01/1994";
+            // 
+            // toolStripStatusLabel5
+            // 
+            this.toolStripStatusLabel5.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
+            this.toolStripStatusLabel5.Name = "toolStripStatusLabel5";
+            this.toolStripStatusLabel5.Size = new System.Drawing.Size(38, 23);
+            this.toolStripStatusLabel5.Text = "11:49";
+            // 
             // tabControl1
             // 
             this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -642,6 +666,15 @@
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Informasi Device :";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(426, 454);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(61, 13);
+            this.label27.TabIndex = 41;
+            this.label27.Text = "1,160,GSM";
             // 
             // listBox1
             // 
@@ -1076,39 +1109,6 @@
             this.label24.Text = "Nomor HP :";
             this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // toolStripStatusLabel4
-            // 
-            this.toolStripStatusLabel4.AutoSize = false;
-            this.toolStripStatusLabel4.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
-            this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
-            this.toolStripStatusLabel4.Size = new System.Drawing.Size(85, 23);
-            this.toolStripStatusLabel4.Text = "13/01/1994";
-            // 
-            // toolStripStatusLabel5
-            // 
-            this.toolStripStatusLabel5.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
-            this.toolStripStatusLabel5.Name = "toolStripStatusLabel5";
-            this.toolStripStatusLabel5.Size = new System.Drawing.Size(38, 23);
-            this.toolStripStatusLabel5.Text = "11:49";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(426, 454);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(61, 13);
-            this.label27.TabIndex = 41;
-            this.label27.Text = "1,160,GSM";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(403, 446);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(66, 15);
-            this.label28.TabIndex = 41;
-            this.label28.Text = "1,160,GSM";
-            // 
             // FrmDevice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1124,6 +1124,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmDevice";
             this.Text = "SMS CARPOOL";
+            this.Load += new System.EventHandler(this.FrmDevice_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);

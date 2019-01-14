@@ -9,9 +9,9 @@ using System.Data.Common;
 
 namespace SMSCarpool.Services
 {
-    class DBConnectionService : IDBConnectionService
+    public class DBConnectionService : IDBConnectionService
     {
-        private MySqlConnection mysqlconnection;
+        private MySqlConnection connection;
         private DBConnectionModel dbConnectionModel;
 
         public string ConnectionString { get; set; }
@@ -22,11 +22,16 @@ namespace SMSCarpool.Services
             ConnectionString = conString;
             Initialize();
         }
+
+        public IDbConnection getConnection()
+        {
+            return connection;
+        }
                 
         //Initialize values
         private void Initialize()
         {
-            mysqlconnection = new MySqlConnection(ConnectionString);
+            connection = new MySqlConnection(ConnectionString);
         }
         
         //open connection to database
@@ -34,7 +39,7 @@ namespace SMSCarpool.Services
         {
             try
             {
-                mysqlconnection.Open();
+                connection.Open();
                 return true;
             }
             catch (MySqlException ex)
@@ -48,7 +53,7 @@ namespace SMSCarpool.Services
         {
             try
             {
-                mysqlconnection.Close();
+                connection.Close();
                 return true;
             }
             catch (MySqlException ex)
@@ -65,7 +70,7 @@ namespace SMSCarpool.Services
                 OpenConnection();
 
                 //create mysql command
-                MySqlCommand cmd = new MySqlCommand(query, mysqlconnection);
+                MySqlCommand cmd = new MySqlCommand(query, connection);
 
                 //Execute command
                 cmd.ExecuteNonQuery();
@@ -92,7 +97,7 @@ namespace SMSCarpool.Services
                 //Assign the query using CommandText
                 cmd.CommandText = query;
                 //Assign the connection using Connection
-                cmd.Connection = mysqlconnection;
+                cmd.Connection = connection;
 
                 //Execute query
                 cmd.ExecuteNonQuery();
@@ -115,7 +120,7 @@ namespace SMSCarpool.Services
                 OpenConnection();
 
                 //create mysql command
-                MySqlCommand cmd = new MySqlCommand(query, mysqlconnection);
+                MySqlCommand cmd = new MySqlCommand(query, connection);
 
                 //Execute command
                 cmd.ExecuteNonQuery();
@@ -142,7 +147,7 @@ namespace SMSCarpool.Services
                 throw new System.Exception(ex.Message);
             }
 
-            MySqlCommand cmd = new MySqlCommand(query, mysqlconnection);
+            MySqlCommand cmd = new MySqlCommand(query, connection);
             MySqlDataReader dataReader;
             //Create a data reader and Execute the command
             using (dataReader = cmd.ExecuteReader())
@@ -176,7 +181,7 @@ namespace SMSCarpool.Services
                 this.OpenConnection();
 
                 //Create Mysql Command
-                MySqlCommand cmd = new MySqlCommand(query, mysqlconnection);
+                MySqlCommand cmd = new MySqlCommand(query, connection);
 
                 //ExecuteScalar will return one value
                 Count = int.Parse(cmd.ExecuteScalar() + "");

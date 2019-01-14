@@ -12,13 +12,40 @@ namespace SMSCarpool.Views
 {
     public partial class FrmDevice : Form, IFrmDevice
     {
+        public IFrmKonfigurasi frmKonfigurasi { get; set; }
+        public FrmDevicePresenter Presenter { get; set; }
+        public bool mShowAllowed;
+
         public FrmDevice()
         {
             InitializeComponent();
+            Initiate();
         }
 
-        public FrmDevicePresenter Presenter { private get; set; }
+        private void Initiate()
+        {
 
+            
+        }
+
+        
+        /*protected override void SetVisibleCore(bool value)
+        {
+            if (!mShowAllowed) value = false;
+            base.SetVisibleCore(value);
+        }*/
+
+
+        public void HideSelf()
+        {
+            Hide();
+        }
+
+        public void ShowSelf()
+        {
+            Show();
+        }
+        
         private void label4_Click(object sender, EventArgs e)
         {
 
@@ -27,6 +54,12 @@ namespace SMSCarpool.Views
         private void textBox18_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void FrmDevice_Load(object sender, EventArgs e)
+        {
+
+            
         }
     }
 }

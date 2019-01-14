@@ -8,6 +8,9 @@ namespace SMSCarpool.Views
 {
     public interface IFrmDevice
     {
-        FrmDevicePresenter Presenter { set; }
+        FrmDevicePresenter Presenter { get; set; }
+        IFrmKonfigurasi frmKonfigurasi { get; set; }
+        void HideSelf();
+        void ShowSelf();
     }
 }

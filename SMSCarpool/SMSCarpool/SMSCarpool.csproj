@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\DBConnectionModel.cs" />
+    <Compile Include="Presenters\FrmKonfigurasiPresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Presenters\FrmDevicePresenter.cs" />

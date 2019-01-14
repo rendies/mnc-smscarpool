@@ -10,7 +10,10 @@ namespace SMSCarpool.Services
 {
     interface IDBConnectionService
     {
+        
         string ConnectionString { get; set; }
+
+        IDbConnection getConnection();
 
         //open connection to database
         bool OpenConnection();
