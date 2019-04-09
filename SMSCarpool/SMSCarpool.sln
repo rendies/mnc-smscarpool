@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMSCarpool", "SMSCarpool\SM
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMSCarpool.Tests", "SMSCarpool.Tests\SMSCarpool.Tests.csproj", "{310406DB-C6D9-481D-9520-BC32F2FCF993}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMSCarpoolUnitTest", "SMSCarpoolUnitTest\SMSCarpoolUnitTest.csproj", "{EBB58BA9-6EA6-42E3-98CE-DAD13A3751EE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{310406DB-C6D9-481D-9520-BC32F2FCF993}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{310406DB-C6D9-481D-9520-BC32F2FCF993}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{310406DB-C6D9-481D-9520-BC32F2FCF993}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBB58BA9-6EA6-42E3-98CE-DAD13A3751EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBB58BA9-6EA6-42E3-98CE-DAD13A3751EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBB58BA9-6EA6-42E3-98CE-DAD13A3751EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBB58BA9-6EA6-42E3-98CE-DAD13A3751EE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

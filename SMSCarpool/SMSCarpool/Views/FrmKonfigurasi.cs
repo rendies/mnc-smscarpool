@@ -35,7 +35,7 @@ namespace SMSCarpool.Views
             if(Presenter.initiateDBConnection(serverName, dbName, userName, password))
             {
                 MessageBox.Show("Connection Successful!","Connection Status", MessageBoxButtons.OK,MessageBoxIcon.Asterisk);
-
+                this.Close();
             } else
             {
                 MessageBox.Show("Connection Failed!", "Connection Status", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -64,6 +64,28 @@ namespace SMSCarpool.Views
             txtUserName.Text = Properties.Settings.Default.UserName;
             txtPassword.Text = Properties.Settings.Default.Password;
 
+
+            if (IsConnected())
+            {
+                this.Close();
+            }
+        }
+
+        public Boolean IsConnected()
+        {
+            string serverName = txtServerName.Text;
+            string dbName = txtDatabase.Text;
+            string userName = txtUserName.Text;
+            string password = txtPassword.Text;
+
+            if (Presenter.initiateDBConnection(serverName, dbName, userName, password))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         private void FrmKonfigurasi_FormClosing(object sender, FormClosingEventArgs e)

@@ -60,7 +60,9 @@ namespace SMSCarpool
 
         void form1_FormClosed(object sender, System.Windows.Forms.FormClosedEventArgs e)
         {
+            Environment.Exit(0);
             this.ExitThread();
+
         }
     }
 }

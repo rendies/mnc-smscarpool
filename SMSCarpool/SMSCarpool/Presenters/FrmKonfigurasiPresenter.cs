@@ -17,6 +17,12 @@ namespace SMSCarpool.Presenters
         {
             frmKonfigurasi = frmKonfigurasiView;
             presenter = this;
+            Initate();
+        }
+
+        public void Initate()
+        {
+
         }
 
         public bool initiateDBConnection(string serverName, string dbName, string userName, string password)
@@ -32,6 +38,7 @@ namespace SMSCarpool.Presenters
                 Properties.Settings.Default.DBName = dbName;
                 Properties.Settings.Default.UserName = userName;
                 Properties.Settings.Default.Password = password;
+                Properties.Settings.Default.ConnectionString = "Server = " + serverName + ";Uid = " + userName + ";Database = " + dbName + "; Pwd =" + password + "";
                 Properties.Settings.Default.Save();
 
                 return true;

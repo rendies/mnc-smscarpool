@@ -28,44 +28,45 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDevice));
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnConnect = new System.Windows.Forms.Button();
+            this.btnDisconnect = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label28 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.txtPushURL = new System.Windows.Forms.TextBox();
+            this.chkWAPPushURL = new System.Windows.Forms.CheckBox();
+            this.panelSMSType = new System.Windows.Forms.Panel();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.rbtnSMSType = new System.Windows.Forms.RadioButton();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.chkAutoDeleteAllReports = new System.Windows.Forms.CheckBox();
+            this.chkAutoDeleteNewSMS = new System.Windows.Forms.CheckBox();
+            this.chkRequestSendReport = new System.Windows.Forms.CheckBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtIsiPesan = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.chkSendReject = new System.Windows.Forms.CheckBox();
+            this.chkAutoReject = new System.Windows.Forms.CheckBox();
+            this.cboFolder = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.txtSMSValidity = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtRetryTimes = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtSendInterval = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtSendTimeout = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.cboBitRate = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cboCommPort = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cboProtocol = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboMode = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -81,31 +82,31 @@
             this.button6 = new System.Windows.Forms.Button();
             this.textBox17 = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.TxtCekPulsa = new System.Windows.Forms.TextBox();
+            this.TxtNomorHP = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.button5 = new System.Windows.Forms.Button();
-            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.TxtTime = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.TxtHardware = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.TxtFirmware = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.TxtSignal = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.TxtBattery = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.TxtNetwork = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.TxtIMEI = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.TxtModel = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.TxtManufacture = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.tabMemoryPesan = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DGMessage = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -119,44 +120,50 @@
             this.tabKirimPesan = new System.Windows.Forms.TabPage();
             this.label26 = new System.Windows.Forms.Label();
             this.button10 = new System.Windows.Forms.Button();
-            this.textBox19 = new System.Windows.Forms.TextBox();
+            this.txtPesanManual = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
-            this.textBox18 = new System.Windows.Forms.TextBox();
+            this.txtNomorHPManual = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.timer3 = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.panelSMSType.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabDevice.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabMemoryPesan.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGMessage)).BeginInit();
             this.tabKirimPesan.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
+            // btnConnect
             // 
-            this.button1.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(12, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(103, 43);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "&Connect";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnConnect.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnConnect.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnConnect.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConnect.Location = new System.Drawing.Point(12, 12);
+            this.btnConnect.Name = "btnConnect";
+            this.btnConnect.Size = new System.Drawing.Size(103, 43);
+            this.btnConnect.TabIndex = 0;
+            this.btnConnect.Text = "&Connect";
+            this.btnConnect.UseVisualStyleBackColor = false;
+            this.btnConnect.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // btnDisconnect
             // 
-            this.button2.BackColor = System.Drawing.Color.IndianRed;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(121, 12);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(103, 43);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "&Disconnect";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnDisconnect.BackColor = System.Drawing.Color.IndianRed;
+            this.btnDisconnect.Enabled = false;
+            this.btnDisconnect.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDisconnect.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDisconnect.Location = new System.Drawing.Point(121, 12);
+            this.btnDisconnect.Name = "btnDisconnect";
+            this.btnDisconnect.Size = new System.Drawing.Size(103, 43);
+            this.btnDisconnect.TabIndex = 1;
+            this.btnDisconnect.Text = "&Disconnect";
+            this.btnDisconnect.UseVisualStyleBackColor = false;
+            this.btnDisconnect.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -181,41 +188,42 @@
             this.button4.TabIndex = 3;
             this.button4.Text = "&Keluar";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox1.Controls.Add(this.label28);
-            this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Controls.Add(this.checkBox6);
-            this.groupBox1.Controls.Add(this.panel1);
-            this.groupBox1.Controls.Add(this.checkBox5);
-            this.groupBox1.Controls.Add(this.checkBox3);
-            this.groupBox1.Controls.Add(this.checkBox4);
+            this.groupBox1.Controls.Add(this.txtPushURL);
+            this.groupBox1.Controls.Add(this.chkWAPPushURL);
+            this.groupBox1.Controls.Add(this.panelSMSType);
+            this.groupBox1.Controls.Add(this.chkAutoDeleteAllReports);
+            this.groupBox1.Controls.Add(this.chkAutoDeleteNewSMS);
+            this.groupBox1.Controls.Add(this.chkRequestSendReport);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.txtIsiPesan);
             this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.checkBox2);
-            this.groupBox1.Controls.Add(this.checkBox1);
-            this.groupBox1.Controls.Add(this.comboBox6);
+            this.groupBox1.Controls.Add(this.chkSendReject);
+            this.groupBox1.Controls.Add(this.chkAutoReject);
+            this.groupBox1.Controls.Add(this.cboFolder);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.comboBox5);
+            this.groupBox1.Controls.Add(this.txtSMSValidity);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.txtRetryTimes);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.txtSendInterval);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtSendTimeout);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.comboBox4);
+            this.groupBox1.Controls.Add(this.cboBitRate);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.comboBox3);
+            this.groupBox1.Controls.Add(this.cboCommPort);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.comboBox2);
+            this.groupBox1.Controls.Add(this.cboProtocol);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.cboMode);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 75);
@@ -234,31 +242,31 @@
             this.label28.TabIndex = 41;
             this.label28.Text = "1,160,GSM";
             // 
-            // textBox5
+            // txtPushURL
             // 
-            this.textBox5.Location = new System.Drawing.Point(218, 579);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(251, 23);
-            this.textBox5.TabIndex = 31;
+            this.txtPushURL.Location = new System.Drawing.Point(218, 579);
+            this.txtPushURL.Name = "txtPushURL";
+            this.txtPushURL.Size = new System.Drawing.Size(251, 23);
+            this.txtPushURL.TabIndex = 31;
             // 
-            // checkBox6
+            // chkWAPPushURL
             // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(109, 581);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(110, 19);
-            this.checkBox6.TabIndex = 30;
-            this.checkBox6.Text = "WAP Push URL :";
-            this.checkBox6.UseVisualStyleBackColor = true;
+            this.chkWAPPushURL.AutoSize = true;
+            this.chkWAPPushURL.Location = new System.Drawing.Point(109, 581);
+            this.chkWAPPushURL.Name = "chkWAPPushURL";
+            this.chkWAPPushURL.Size = new System.Drawing.Size(110, 19);
+            this.chkWAPPushURL.TabIndex = 30;
+            this.chkWAPPushURL.Text = "WAP Push URL :";
+            this.chkWAPPushURL.UseVisualStyleBackColor = true;
             // 
-            // panel1
+            // panelSMSType
             // 
-            this.panel1.Controls.Add(this.radioButton1);
-            this.panel1.Controls.Add(this.rbtnSMSType);
-            this.panel1.Location = new System.Drawing.Point(97, 554);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(255, 20);
-            this.panel1.TabIndex = 29;
+            this.panelSMSType.Controls.Add(this.radioButton1);
+            this.panelSMSType.Controls.Add(this.rbtnSMSType);
+            this.panelSMSType.Location = new System.Drawing.Point(97, 554);
+            this.panelSMSType.Name = "panelSMSType";
+            this.panelSMSType.Size = new System.Drawing.Size(255, 20);
+            this.panelSMSType.TabIndex = 29;
             // 
             // radioButton1
             // 
@@ -282,35 +290,35 @@
             this.rbtnSMSType.Text = "Standar SMS";
             this.rbtnSMSType.UseVisualStyleBackColor = true;
             // 
-            // checkBox5
+            // chkAutoDeleteAllReports
             // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(109, 529);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(167, 19);
-            this.checkBox5.TabIndex = 26;
-            this.checkBox5.Text = "Send Reject Incoming Call";
-            this.checkBox5.UseVisualStyleBackColor = true;
+            this.chkAutoDeleteAllReports.AutoSize = true;
+            this.chkAutoDeleteAllReports.Location = new System.Drawing.Point(109, 529);
+            this.chkAutoDeleteAllReports.Name = "chkAutoDeleteAllReports";
+            this.chkAutoDeleteAllReports.Size = new System.Drawing.Size(151, 19);
+            this.chkAutoDeleteAllReports.TabIndex = 26;
+            this.chkAutoDeleteAllReports.Text = "Auto Delete All Reports";
+            this.chkAutoDeleteAllReports.UseVisualStyleBackColor = true;
             // 
-            // checkBox3
+            // chkAutoDeleteNewSMS
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(109, 504);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(167, 19);
-            this.checkBox3.TabIndex = 25;
-            this.checkBox3.Text = "Send Reject Incoming Call";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.chkAutoDeleteNewSMS.AutoSize = true;
+            this.chkAutoDeleteNewSMS.Location = new System.Drawing.Point(109, 504);
+            this.chkAutoDeleteNewSMS.Name = "chkAutoDeleteNewSMS";
+            this.chkAutoDeleteNewSMS.Size = new System.Drawing.Size(140, 19);
+            this.chkAutoDeleteNewSMS.TabIndex = 25;
+            this.chkAutoDeleteNewSMS.Text = "Auto Delete New SMS";
+            this.chkAutoDeleteNewSMS.UseVisualStyleBackColor = true;
             // 
-            // checkBox4
+            // chkRequestSendReport
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(109, 479);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(166, 19);
-            this.checkBox4.TabIndex = 24;
-            this.checkBox4.Text = "Auto Reject Incoming Call";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.chkRequestSendReport.AutoSize = true;
+            this.chkRequestSendReport.Location = new System.Drawing.Point(109, 479);
+            this.chkRequestSendReport.Name = "chkRequestSendReport";
+            this.chkRequestSendReport.Size = new System.Drawing.Size(137, 19);
+            this.chkRequestSendReport.TabIndex = 24;
+            this.chkRequestSendReport.Text = "Request Send Report";
+            this.chkRequestSendReport.UseVisualStyleBackColor = true;
             // 
             // label12
             // 
@@ -328,13 +336,13 @@
             this.label11.Size = new System.Drawing.Size(491, 2);
             this.label11.TabIndex = 22;
             // 
-            // textBox4
+            // txtIsiPesan
             // 
-            this.textBox4.Location = new System.Drawing.Point(109, 354);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(360, 89);
-            this.textBox4.TabIndex = 21;
+            this.txtIsiPesan.Location = new System.Drawing.Point(109, 354);
+            this.txtIsiPesan.Multiline = true;
+            this.txtIsiPesan.Name = "txtIsiPesan";
+            this.txtIsiPesan.Size = new System.Drawing.Size(360, 89);
+            this.txtIsiPesan.TabIndex = 21;
             // 
             // label10
             // 
@@ -348,33 +356,33 @@
             this.label10.Text = "Isi Pesan :";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // checkBox2
+            // chkSendReject
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(109, 330);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(167, 19);
-            this.checkBox2.TabIndex = 19;
-            this.checkBox2.Text = "Send Reject Incoming Call";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.chkSendReject.AutoSize = true;
+            this.chkSendReject.Location = new System.Drawing.Point(109, 330);
+            this.chkSendReject.Name = "chkSendReject";
+            this.chkSendReject.Size = new System.Drawing.Size(167, 19);
+            this.chkSendReject.TabIndex = 19;
+            this.chkSendReject.Text = "Send Reject Incoming Call";
+            this.chkSendReject.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // chkAutoReject
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(109, 305);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(166, 19);
-            this.checkBox1.TabIndex = 18;
-            this.checkBox1.Text = "Auto Reject Incoming Call";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chkAutoReject.AutoSize = true;
+            this.chkAutoReject.Location = new System.Drawing.Point(109, 305);
+            this.chkAutoReject.Name = "chkAutoReject";
+            this.chkAutoReject.Size = new System.Drawing.Size(166, 19);
+            this.chkAutoReject.TabIndex = 18;
+            this.chkAutoReject.Text = "Auto Reject Incoming Call";
+            this.chkAutoReject.UseVisualStyleBackColor = true;
             // 
-            // comboBox6
+            // cboFolder
             // 
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(109, 263);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(360, 23);
-            this.comboBox6.TabIndex = 17;
+            this.cboFolder.FormattingEnabled = true;
+            this.cboFolder.Location = new System.Drawing.Point(109, 263);
+            this.cboFolder.Name = "cboFolder";
+            this.cboFolder.Size = new System.Drawing.Size(360, 23);
+            this.cboFolder.TabIndex = 17;
             // 
             // label9
             // 
@@ -388,13 +396,13 @@
             this.label9.Text = "Folder :";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // comboBox5
+            // txtSMSValidity
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(109, 234);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(360, 23);
-            this.comboBox5.TabIndex = 15;
+            this.txtSMSValidity.FormattingEnabled = true;
+            this.txtSMSValidity.Location = new System.Drawing.Point(109, 234);
+            this.txtSMSValidity.Name = "txtSMSValidity";
+            this.txtSMSValidity.Size = new System.Drawing.Size(360, 23);
+            this.txtSMSValidity.TabIndex = 15;
             // 
             // label8
             // 
@@ -408,12 +416,12 @@
             this.label8.Text = "SMS Validity :";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // textBox3
+            // txtRetryTimes
             // 
-            this.textBox3.Location = new System.Drawing.Point(109, 205);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(360, 23);
-            this.textBox3.TabIndex = 13;
+            this.txtRetryTimes.Location = new System.Drawing.Point(109, 205);
+            this.txtRetryTimes.Name = "txtRetryTimes";
+            this.txtRetryTimes.Size = new System.Drawing.Size(360, 23);
+            this.txtRetryTimes.TabIndex = 13;
             // 
             // label7
             // 
@@ -427,12 +435,12 @@
             this.label7.Text = "Retry Times :";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // textBox2
+            // txtSendInterval
             // 
-            this.textBox2.Location = new System.Drawing.Point(109, 176);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(360, 23);
-            this.textBox2.TabIndex = 11;
+            this.txtSendInterval.Location = new System.Drawing.Point(109, 176);
+            this.txtSendInterval.Name = "txtSendInterval";
+            this.txtSendInterval.Size = new System.Drawing.Size(360, 23);
+            this.txtSendInterval.TabIndex = 11;
             // 
             // label6
             // 
@@ -446,12 +454,12 @@
             this.label6.Text = "Send Interval :";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // textBox1
+            // txtSendTimeout
             // 
-            this.textBox1.Location = new System.Drawing.Point(109, 147);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(360, 23);
-            this.textBox1.TabIndex = 9;
+            this.txtSendTimeout.Location = new System.Drawing.Point(109, 147);
+            this.txtSendTimeout.Name = "txtSendTimeout";
+            this.txtSendTimeout.Size = new System.Drawing.Size(360, 23);
+            this.txtSendTimeout.TabIndex = 9;
             // 
             // label5
             // 
@@ -465,13 +473,13 @@
             this.label5.Text = "Send Timeout :";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // comboBox4
+            // cboBitRate
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(109, 118);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(360, 23);
-            this.comboBox4.TabIndex = 7;
+            this.cboBitRate.FormattingEnabled = true;
+            this.cboBitRate.Location = new System.Drawing.Point(109, 118);
+            this.cboBitRate.Name = "cboBitRate";
+            this.cboBitRate.Size = new System.Drawing.Size(360, 23);
+            this.cboBitRate.TabIndex = 7;
             // 
             // label4
             // 
@@ -486,13 +494,13 @@
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
-            // comboBox3
+            // cboCommPort
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(109, 89);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(360, 23);
-            this.comboBox3.TabIndex = 5;
+            this.cboCommPort.FormattingEnabled = true;
+            this.cboCommPort.Location = new System.Drawing.Point(109, 89);
+            this.cboCommPort.Name = "cboCommPort";
+            this.cboCommPort.Size = new System.Drawing.Size(360, 23);
+            this.cboCommPort.TabIndex = 5;
             // 
             // label3
             // 
@@ -506,13 +514,13 @@
             this.label3.Text = "Comm Port :";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // comboBox2
+            // cboProtocol
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(109, 60);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(360, 23);
-            this.comboBox2.TabIndex = 3;
+            this.cboProtocol.FormattingEnabled = true;
+            this.cboProtocol.Location = new System.Drawing.Point(109, 60);
+            this.cboProtocol.Name = "cboProtocol";
+            this.cboProtocol.Size = new System.Drawing.Size(360, 23);
+            this.cboProtocol.TabIndex = 3;
             // 
             // label2
             // 
@@ -526,13 +534,13 @@
             this.label2.Text = "Protocol :";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // comboBox1
+            // cboMode
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(109, 31);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(360, 23);
-            this.comboBox1.TabIndex = 1;
+            this.cboMode.FormattingEnabled = true;
+            this.cboMode.Location = new System.Drawing.Point(109, 31);
+            this.cboMode.Name = "cboMode";
+            this.cboMode.Size = new System.Drawing.Size(360, 23);
+            this.cboMode.TabIndex = 1;
             // 
             // label1
             // 
@@ -637,28 +645,28 @@
             this.groupBox2.Controls.Add(this.button6);
             this.groupBox2.Controls.Add(this.textBox17);
             this.groupBox2.Controls.Add(this.label23);
-            this.groupBox2.Controls.Add(this.textBox16);
-            this.groupBox2.Controls.Add(this.textBox15);
+            this.groupBox2.Controls.Add(this.TxtCekPulsa);
+            this.groupBox2.Controls.Add(this.TxtNomorHP);
             this.groupBox2.Controls.Add(this.label22);
             this.groupBox2.Controls.Add(this.progressBar1);
             this.groupBox2.Controls.Add(this.button5);
-            this.groupBox2.Controls.Add(this.textBox14);
+            this.groupBox2.Controls.Add(this.TxtTime);
             this.groupBox2.Controls.Add(this.label21);
-            this.groupBox2.Controls.Add(this.textBox10);
+            this.groupBox2.Controls.Add(this.TxtHardware);
             this.groupBox2.Controls.Add(this.label17);
-            this.groupBox2.Controls.Add(this.textBox11);
+            this.groupBox2.Controls.Add(this.TxtFirmware);
             this.groupBox2.Controls.Add(this.label18);
-            this.groupBox2.Controls.Add(this.textBox12);
+            this.groupBox2.Controls.Add(this.TxtSignal);
             this.groupBox2.Controls.Add(this.label19);
-            this.groupBox2.Controls.Add(this.textBox13);
+            this.groupBox2.Controls.Add(this.TxtBattery);
             this.groupBox2.Controls.Add(this.label20);
-            this.groupBox2.Controls.Add(this.textBox9);
+            this.groupBox2.Controls.Add(this.TxtNetwork);
             this.groupBox2.Controls.Add(this.label16);
-            this.groupBox2.Controls.Add(this.textBox8);
+            this.groupBox2.Controls.Add(this.TxtIMEI);
             this.groupBox2.Controls.Add(this.label15);
-            this.groupBox2.Controls.Add(this.textBox7);
+            this.groupBox2.Controls.Add(this.TxtModel);
             this.groupBox2.Controls.Add(this.label14);
-            this.groupBox2.Controls.Add(this.textBox6);
+            this.groupBox2.Controls.Add(this.TxtManufacture);
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Location = new System.Drawing.Point(6, 6);
             this.groupBox2.Name = "groupBox2";
@@ -695,6 +703,7 @@
             this.button6.TabIndex = 37;
             this.button6.Text = "Cek Pulsa";
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // textBox17
             // 
@@ -716,19 +725,19 @@
             this.label23.Text = "Isi Pesan :";
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // textBox16
+            // TxtCekPulsa
             // 
-            this.textBox16.Location = new System.Drawing.Point(338, 338);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(149, 20);
-            this.textBox16.TabIndex = 34;
+            this.TxtCekPulsa.Location = new System.Drawing.Point(338, 338);
+            this.TxtCekPulsa.Name = "TxtCekPulsa";
+            this.TxtCekPulsa.Size = new System.Drawing.Size(149, 20);
+            this.TxtCekPulsa.TabIndex = 34;
             // 
-            // textBox15
+            // TxtNomorHP
             // 
-            this.textBox15.Location = new System.Drawing.Point(127, 338);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(205, 20);
-            this.textBox15.TabIndex = 33;
+            this.TxtNomorHP.Location = new System.Drawing.Point(127, 338);
+            this.TxtNomorHP.Name = "TxtNomorHP";
+            this.TxtNomorHP.Size = new System.Drawing.Size(205, 20);
+            this.TxtNomorHP.TabIndex = 33;
             // 
             // label22
             // 
@@ -760,13 +769,14 @@
             this.button5.TabIndex = 30;
             this.button5.Text = "Refresh";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // textBox14
+            // TxtTime
             // 
-            this.textBox14.Location = new System.Drawing.Point(127, 237);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(360, 20);
-            this.textBox14.TabIndex = 29;
+            this.TxtTime.Location = new System.Drawing.Point(127, 237);
+            this.TxtTime.Name = "TxtTime";
+            this.TxtTime.Size = new System.Drawing.Size(360, 20);
+            this.TxtTime.TabIndex = 29;
             // 
             // label21
             // 
@@ -780,12 +790,12 @@
             this.label21.Text = "Time :";
             this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // textBox10
+            // TxtHardware
             // 
-            this.textBox10.Location = new System.Drawing.Point(127, 211);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(360, 20);
-            this.textBox10.TabIndex = 27;
+            this.TxtHardware.Location = new System.Drawing.Point(127, 211);
+            this.TxtHardware.Name = "TxtHardware";
+            this.TxtHardware.Size = new System.Drawing.Size(360, 20);
+            this.TxtHardware.TabIndex = 27;
             // 
             // label17
             // 
@@ -799,12 +809,12 @@
             this.label17.Text = "Hardware :";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // textBox11
+            // TxtFirmware
             // 
-            this.textBox11.Location = new System.Drawing.Point(127, 185);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(360, 20);
-            this.textBox11.TabIndex = 25;
+            this.TxtFirmware.Location = new System.Drawing.Point(127, 185);
+            this.TxtFirmware.Name = "TxtFirmware";
+            this.TxtFirmware.Size = new System.Drawing.Size(360, 20);
+            this.TxtFirmware.TabIndex = 25;
             // 
             // label18
             // 
@@ -818,12 +828,12 @@
             this.label18.Text = "Firmware :";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // textBox12
+            // TxtSignal
             // 
-            this.textBox12.Location = new System.Drawing.Point(127, 159);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(360, 20);
-            this.textBox12.TabIndex = 23;
+            this.TxtSignal.Location = new System.Drawing.Point(127, 159);
+            this.TxtSignal.Name = "TxtSignal";
+            this.TxtSignal.Size = new System.Drawing.Size(360, 20);
+            this.TxtSignal.TabIndex = 23;
             // 
             // label19
             // 
@@ -837,12 +847,12 @@
             this.label19.Text = "Signal :";
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // textBox13
+            // TxtBattery
             // 
-            this.textBox13.Location = new System.Drawing.Point(127, 133);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(360, 20);
-            this.textBox13.TabIndex = 21;
+            this.TxtBattery.Location = new System.Drawing.Point(127, 133);
+            this.TxtBattery.Name = "TxtBattery";
+            this.TxtBattery.Size = new System.Drawing.Size(360, 20);
+            this.TxtBattery.TabIndex = 21;
             // 
             // label20
             // 
@@ -856,12 +866,12 @@
             this.label20.Text = "Battery :";
             this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // textBox9
+            // TxtNetwork
             // 
-            this.textBox9.Location = new System.Drawing.Point(127, 107);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(360, 20);
-            this.textBox9.TabIndex = 19;
+            this.TxtNetwork.Location = new System.Drawing.Point(127, 107);
+            this.TxtNetwork.Name = "TxtNetwork";
+            this.TxtNetwork.Size = new System.Drawing.Size(360, 20);
+            this.TxtNetwork.TabIndex = 19;
             // 
             // label16
             // 
@@ -875,12 +885,12 @@
             this.label16.Text = "Network :";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // textBox8
+            // TxtIMEI
             // 
-            this.textBox8.Location = new System.Drawing.Point(127, 81);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(360, 20);
-            this.textBox8.TabIndex = 17;
+            this.TxtIMEI.Location = new System.Drawing.Point(127, 81);
+            this.TxtIMEI.Name = "TxtIMEI";
+            this.TxtIMEI.Size = new System.Drawing.Size(360, 20);
+            this.TxtIMEI.TabIndex = 17;
             // 
             // label15
             // 
@@ -894,12 +904,12 @@
             this.label15.Text = "IMEI :";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // textBox7
+            // TxtModel
             // 
-            this.textBox7.Location = new System.Drawing.Point(127, 55);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(360, 20);
-            this.textBox7.TabIndex = 15;
+            this.TxtModel.Location = new System.Drawing.Point(127, 55);
+            this.TxtModel.Name = "TxtModel";
+            this.TxtModel.Size = new System.Drawing.Size(360, 20);
+            this.TxtModel.TabIndex = 15;
             // 
             // label14
             // 
@@ -913,12 +923,12 @@
             this.label14.Text = "Model :";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // textBox6
+            // TxtManufacture
             // 
-            this.textBox6.Location = new System.Drawing.Point(127, 29);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(360, 20);
-            this.textBox6.TabIndex = 13;
+            this.TxtManufacture.Location = new System.Drawing.Point(127, 29);
+            this.TxtManufacture.Name = "TxtManufacture";
+            this.TxtManufacture.Size = new System.Drawing.Size(360, 20);
+            this.TxtManufacture.TabIndex = 13;
             // 
             // label13
             // 
@@ -934,7 +944,7 @@
             // 
             // tabMemoryPesan
             // 
-            this.tabMemoryPesan.Controls.Add(this.dataGridView1);
+            this.tabMemoryPesan.Controls.Add(this.DGMessage);
             this.tabMemoryPesan.Controls.Add(this.button9);
             this.tabMemoryPesan.Controls.Add(this.button8);
             this.tabMemoryPesan.Controls.Add(this.button7);
@@ -945,11 +955,12 @@
             this.tabMemoryPesan.TabIndex = 1;
             this.tabMemoryPesan.Text = "2. Memory Pesan";
             this.tabMemoryPesan.UseVisualStyleBackColor = true;
+            this.tabMemoryPesan.Click += new System.EventHandler(this.tabMemoryPesan_Click);
             // 
-            // dataGridView1
+            // DGMessage
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DGMessage.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGMessage.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
             this.Column3,
@@ -957,10 +968,10 @@
             this.Column5,
             this.Column6,
             this.Column7});
-            this.dataGridView1.Location = new System.Drawing.Point(16, 64);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(494, 511);
-            this.dataGridView1.TabIndex = 41;
+            this.DGMessage.Location = new System.Drawing.Point(16, 64);
+            this.DGMessage.Name = "DGMessage";
+            this.DGMessage.Size = new System.Drawing.Size(494, 511);
+            this.DGMessage.TabIndex = 41;
             // 
             // Column1
             // 
@@ -1032,14 +1043,15 @@
             this.button7.TabIndex = 38;
             this.button7.Text = "Refresh";
             this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // tabKirimPesan
             // 
             this.tabKirimPesan.Controls.Add(this.label26);
             this.tabKirimPesan.Controls.Add(this.button10);
-            this.tabKirimPesan.Controls.Add(this.textBox19);
+            this.tabKirimPesan.Controls.Add(this.txtPesanManual);
             this.tabKirimPesan.Controls.Add(this.label25);
-            this.tabKirimPesan.Controls.Add(this.textBox18);
+            this.tabKirimPesan.Controls.Add(this.txtNomorHPManual);
             this.tabKirimPesan.Controls.Add(this.label24);
             this.tabKirimPesan.Location = new System.Drawing.Point(4, 25);
             this.tabKirimPesan.Name = "tabKirimPesan";
@@ -1068,14 +1080,15 @@
             this.button10.TabIndex = 39;
             this.button10.Text = "Kirim";
             this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
-            // textBox19
+            // txtPesanManual
             // 
-            this.textBox19.Location = new System.Drawing.Point(133, 61);
-            this.textBox19.Multiline = true;
-            this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(360, 123);
-            this.textBox19.TabIndex = 15;
+            this.txtPesanManual.Location = new System.Drawing.Point(133, 61);
+            this.txtPesanManual.Multiline = true;
+            this.txtPesanManual.Name = "txtPesanManual";
+            this.txtPesanManual.Size = new System.Drawing.Size(360, 123);
+            this.txtPesanManual.TabIndex = 15;
             // 
             // label25
             // 
@@ -1089,13 +1102,13 @@
             this.label25.Text = "Isi Pesan :";
             this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // textBox18
+            // txtNomorHPManual
             // 
-            this.textBox18.Location = new System.Drawing.Point(133, 35);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(360, 20);
-            this.textBox18.TabIndex = 13;
-            this.textBox18.TextChanged += new System.EventHandler(this.textBox18_TextChanged);
+            this.txtNomorHPManual.Location = new System.Drawing.Point(133, 35);
+            this.txtNomorHPManual.Name = "txtNomorHPManual";
+            this.txtNomorHPManual.Size = new System.Drawing.Size(360, 20);
+            this.txtNomorHPManual.TabIndex = 13;
+            this.txtNomorHPManual.TextChanged += new System.EventHandler(this.textBox18_TextChanged);
             // 
             // label24
             // 
@@ -1109,6 +1122,20 @@
             this.label24.Text = "Nomor HP :";
             this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 15000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // timer2
+            // 
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
+            // timer3
+            // 
+            this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
+            // 
             // FrmDevice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1119,16 +1146,17 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnDisconnect);
+            this.Controls.Add(this.btnConnect);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmDevice";
             this.Text = "SMS CARPOOL";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmDevice_FormClosing);
             this.Load += new System.EventHandler(this.FrmDevice_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panelSMSType.ResumeLayout(false);
+            this.panelSMSType.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
@@ -1136,7 +1164,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.tabMemoryPesan.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGMessage)).EndInit();
             this.tabKirimPesan.ResumeLayout(false);
             this.tabKirimPesan.PerformLayout();
             this.ResumeLayout(false);
@@ -1146,8 +1174,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnConnect;
+        private System.Windows.Forms.Button btnDisconnect;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -1155,58 +1183,58 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox cboBitRate;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cboCommPort;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cboProtocol;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboMode;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.CheckBox checkBox6;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox txtPushURL;
+        private System.Windows.Forms.CheckBox chkWAPPushURL;
+        private System.Windows.Forms.Panel panelSMSType;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton rbtnSMSType;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox4;
+        private System.Windows.Forms.CheckBox chkAutoDeleteAllReports;
+        private System.Windows.Forms.CheckBox chkAutoDeleteNewSMS;
+        private System.Windows.Forms.CheckBox chkRequestSendReport;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtIsiPesan;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.ComboBox comboBox6;
+        private System.Windows.Forms.CheckBox chkSendReject;
+        private System.Windows.Forms.CheckBox chkAutoReject;
+        private System.Windows.Forms.ComboBox cboFolder;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.ComboBox txtSMSValidity;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtRetryTimes;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtSendInterval;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtSendTimeout;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabDevice;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.TextBox TxtTime;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox TxtHardware;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox TxtFirmware;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox TxtSignal;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.TextBox TxtBattery;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox TxtNetwork;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox TxtIMEI;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox TxtModel;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox TxtManufacture;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TabPage tabMemoryPesan;
         private System.Windows.Forms.TabPage tabKirimPesan;
@@ -1215,11 +1243,11 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.TextBox textBox17;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.TextBox textBox16;
-        private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.TextBox TxtCekPulsa;
+        private System.Windows.Forms.TextBox TxtNomorHP;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView DGMessage;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -1230,15 +1258,18 @@
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.TextBox textBox18;
+        private System.Windows.Forms.TextBox txtNomorHPManual;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.TextBox textBox19;
+        private System.Windows.Forms.TextBox txtPesanManual;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel4;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel5;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Timer timer3;
     }
 }

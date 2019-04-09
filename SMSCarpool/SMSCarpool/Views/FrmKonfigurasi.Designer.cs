@@ -127,7 +127,7 @@
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(103, 33);
             this.button5.TabIndex = 31;
-            this.button5.Text = "Exit";
+            this.button5.Text = "Close";
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -160,7 +160,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(410, 180);
+            this.ClientSize = new System.Drawing.Size(410, 176);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button5);

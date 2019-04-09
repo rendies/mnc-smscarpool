@@ -37,28 +37,43 @@ namespace SMSCarpool.Services
         //open connection to database
         public bool OpenConnection()
         {
-            try
+            if(connection.State == ConnectionState.Open)
             {
-                connection.Open();
                 return true;
-            }
-            catch (MySqlException ex)
+            } 
+            else
             {
-                throw new System.Exception(ex.Number + ": " + ex.Message);
+                try
+                {
+                    connection.Open();
+                    return true;
+                }
+                catch (MySqlException ex)
+                {
+                    throw new System.Exception(ex.Number + ": " + ex.Message);
+                }
             }
+            
         }
 
         //Close connection
         public bool CloseConnection()
         {
-            try
+            if (connection.State == ConnectionState.Closed)
             {
-                connection.Close();
                 return true;
             }
-            catch (MySqlException ex)
+            else
             {
-                throw new System.Exception(ex.Number + ": " + ex.Message);
+                try
+                {
+                    connection.Close();
+                    return true;
+                }
+                catch (MySqlException ex)
+                {
+                    throw new System.Exception(ex.Number + ": " + ex.Message);
+                }
             }
         }
 
