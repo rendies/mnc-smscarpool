@@ -32,13 +32,37 @@ namespace SMSCarpool.Views
             string userName = txtUserName.Text;
             string password = txtPassword.Text;
 
-            if(Presenter.initiateDBConnection(serverName, dbName, userName, password))
+            string serverName2 = txtServerName.Text;
+            string dbName2 = txtDatabase.Text;
+            string userName2 = txtUserName.Text;
+            string password2 = txtPassword.Text;
+
+            var result1 = Presenter.initiateDBConnection(serverName, dbName, userName, password);
+            var result2 = Presenter.initiateDBConnection2(serverName2, dbName2, userName2, password2);
+
+            lblConnectionMessage.Visible = true;
+            lblConnectionMessage2.Visible = true;
+
+            if (result1)
             {
-                MessageBox.Show("Connection Successful!","Connection Status", MessageBoxButtons.OK,MessageBoxIcon.Asterisk);
-                this.Close();
+                lblConnectionMessage.Text = "Connection Successful!";
+                lblConnectionMessage.ForeColor = Color.Green;
+                
             } else
             {
-                MessageBox.Show("Connection Failed!", "Connection Status", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lblConnectionMessage.Text = "Connection Failed!";
+                lblConnectionMessage.ForeColor = Color.Red;
+            }
+
+            if (result2)
+            {
+                lblConnectionMessage2.Text = "Connection Successful!";
+                lblConnectionMessage2.ForeColor = Color.Green;
+            }
+            else
+            {
+                lblConnectionMessage2.Text = "Connection Failed!";
+                lblConnectionMessage2.ForeColor = Color.Red;
             }
         }
 
@@ -64,10 +88,14 @@ namespace SMSCarpool.Views
             txtUserName.Text = Properties.Settings.Default.UserName;
             txtPassword.Text = Properties.Settings.Default.Password;
 
+            txtServerName2.Text = Properties.Settings.Default.Server2;
+            txtDatabase2.Text = Properties.Settings.Default.DBName2;
+            txtUserName2.Text = Properties.Settings.Default.UserName2;
+            txtPassword2.Text = Properties.Settings.Default.Password2;
 
             if (IsConnected())
             {
-                this.Close();
+                Presenter.formClosing(frmDevice);
             }
         }
 
@@ -78,7 +106,12 @@ namespace SMSCarpool.Views
             string userName = txtUserName.Text;
             string password = txtPassword.Text;
 
-            if (Presenter.initiateDBConnection(serverName, dbName, userName, password))
+            string serverName2 = txtServerName2.Text;
+            string dbName2 = txtDatabase2.Text;
+            string userName2 = txtUserName2.Text;
+            string password2 = txtPassword2.Text;
+
+            if (Presenter.initiateDBConnection(serverName, dbName, userName, password) && Presenter.initiateDBConnection(serverName2, dbName2, userName2, password2))
             {
                 return true;
             }
@@ -96,7 +129,17 @@ namespace SMSCarpool.Views
 
         private void button5_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Presenter.formClosing(frmDevice);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrmKonfigurasi_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Presenter.formClosing(frmDevice);
         }
     }
 }

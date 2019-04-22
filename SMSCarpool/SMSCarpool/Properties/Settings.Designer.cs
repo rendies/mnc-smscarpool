@@ -82,5 +82,65 @@ namespace SMSCarpool.Properties {
                 this["ConnectionString"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Server2 {
+            get {
+                return ((string)(this["Server2"]));
+            }
+            set {
+                this["Server2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string DBName2 {
+            get {
+                return ((string)(this["DBName2"]));
+            }
+            set {
+                this["DBName2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string UserName2 {
+            get {
+                return ((string)(this["UserName2"]));
+            }
+            set {
+                this["UserName2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Password2 {
+            get {
+                return ((string)(this["Password2"]));
+            }
+            set {
+                this["Password2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string ConnectionString2 {
+            get {
+                return ((string)(this["ConnectionString2"]));
+            }
+            set {
+                this["ConnectionString2"] = value;
+            }
+        }
     }
 }

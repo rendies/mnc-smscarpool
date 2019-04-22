@@ -45,11 +45,19 @@ namespace SMSCarpool.Presenters
             }
         }
 
+        public void formClosing(IFrmKonfigurasi frmKonfigurasi)
+        {
+            frmKonfigurasi.ShowSelf();
+            frmDevice.HideSelf();
+            
+        }
+
         public void SendMessage()
         {
             
             List<MessageModel> datas = messageService.CheckMessage();
-            foreach(MessageModel data in datas)
+            List<MessageModel> datas2 = messageService.CheckMessage2();
+            foreach (MessageModel data in datas)
             {
                 if (modemService.SendSMS(data.noTelp, data.pesan))
                 {
@@ -61,8 +69,22 @@ namespace SMSCarpool.Presenters
                 }
 
                 messageService.MessageProcessed(data.id);
+                
+            }
 
+            foreach (MessageModel data in datas2)
+            {
+                if (modemService.SendSMS(data.noTelp, data.pesan))
+                {
+                    messageService.MessageFail2(data.id);
+                }
+                else
+                {
+                    messageService.MessageSent2(data.id);
+                }
 
+                messageService.MessageProcessed2(data.id);
+                
             }
         }
 
@@ -150,6 +172,57 @@ namespace SMSCarpool.Presenters
             }
 
             return deviceModel;
+        }
+
+        public bool UpdateModemConfig(DeviceModel model)
+        {
+            var result = false;
+            try
+            {
+                DBConnService.Update("UPDATE `sms_modem` " +
+                                        " SET " +
+                                            " `initial` = '" + model.initial + "', " +
+                                            " `mode` = '" + model.mode + "', " +
+                                            " `protocol` = '" + model.protocol + "', " +
+                                            " `comm_port` = '" + model.comm_port + "', " +
+                                            " `bit_rate` = '" + model.bit_rate + "', " +
+                                            "  `send_timeout` = '" + model.send_timeout + "', " +
+                                            "  `send_interval` = '" + model.send_interval + "', " +
+                                            "  `retry_times` = '" + model.retry_times + "', " +
+                                            "  `sms_validity` = '" + model.sms_validity + "', " +
+                                            "  `folder` = '" + model.folder + "', " +
+                                            "  `auto_reject_incoming_call` = '" + model.auto_reject_incoming_call + "', " +
+                                            "  `send_reject_incoming_call` = '" + model.send_reject_incoming_call + "', " +
+                                            "  `message_reject_incoming_call` = '" + model.message_reject_incomming_call + "', " +
+                                            "  `request_send_report` = '" + model.request_send_report + "', " +
+                                            "  `auto_delete_new_sms` = '" + model.auto_delete_new_sms + "', " +
+                                            "  `auto_delete_all_report` = '" + model.auto_delete_all_report + "', " +
+                                            "  `is_proses_schedule` = '" + model.is_proses_schedule + "', " +
+                                            "  `is_proses_new_sms` = '" + model.is_proses_new_sms + "', " +
+                                            "  `is_no_prefix` = '" + model.is_no_prefix + "', " +
+                                            "  `pesan_no_prefix` = '" + model.pesan_no_prefix + "', " +
+                                            "  `sms_type` = '" + model.sms_type + "', " +
+                                            "  `wap_push_url` = '" + model.wap_push_url + "', " +
+                                            "  `nomor_cek_pulsa` = '" + model.nomor_cek_pulsa + "', " +
+                                            "  `nomor_hp_ini` = '" + model.nomor_hp_ini + "', " +
+                                            "  `keterangan` = '" + model.keterangan + "', " +
+                                            "  `status` = '" + model.status + "', " +
+                                            "  `is_on` = '" + model.is_on + "', " +
+                                            "  `waktu_cek_schedule` = '" + model.waktu_cek_schedule + "', " +
+                                            "  `waktu_cek_pesan_pending` = '" + model.waktu_cek_pesan_pending + "', " +
+                                            "  `waktu_cek_koneksi` = '" + model.waktu_cek_koneksi + "', " +
+                                            "  `cek_pesan_masuk` = '" + model.cek_pesan_masuk + "' " +
+                                            " WHERE (`id` = '" + model.id + "'); ");
+
+                result = true;
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+
+            return result;
         }
 
     }

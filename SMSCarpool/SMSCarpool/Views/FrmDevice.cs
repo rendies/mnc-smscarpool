@@ -24,7 +24,9 @@ namespace SMSCarpool.Views
         ModemService modemService = ModemService.Instance;
         public bool mShowAllowed;
         Thread _thread;
-        
+        DeviceModel deviceModel = new DeviceModel();
+
+
 
         public FrmDevice()
         {
@@ -66,6 +68,38 @@ namespace SMSCarpool.Views
 
         }
 
+        private void SetModemConfig(DeviceModel model)
+        {
+            cboMode.Text = model.mode;
+            cboProtocol.Text = model.protocol;
+            cboCommPort.Text = (model.comm_port.ToString());
+            cboBitRate.Text = (model.bit_rate.ToString());
+            txtSendTimeout.Text = model.send_timeout.ToString();
+            txtSendInterval.Text = model.send_interval.ToString();
+            txtRetryTimes.Text = model.retry_times.ToString();
+            txtSMSValidity.Text = model.sms_validity.ToString();
+            cboFolder.Items.Add(model.folder);
+            if (model.auto_reject_incoming_call == 1)
+            {
+                chkAutoReject.Checked = true;
+            }
+            else
+            {
+                chkAutoReject.Checked = false;
+            }
+
+            if (model.send_reject_incoming_call == 1)
+            {
+                chkSendReject.Checked = true;
+            }
+            else
+            {
+                chkSendReject.Checked = false;
+            }
+
+            txtIsiPesan.Text = model.message_reject_incomming_call;
+        }
+
         private void FrmDevice_Load(object sender, EventArgs e)
         {
             btnDisconnect.BackColor = Color.Gray;
@@ -75,38 +109,20 @@ namespace SMSCarpool.Views
             toolStripStatusLabel5.Text = DateTime.Now.ToShortTimeString();
             
 
-            DeviceModel deviceModel = Presenter.GetModemConfig(8, "-");
+            deviceModel = Presenter.GetModemConfig(8, "-");
+            SetModemConfig(deviceModel);
+            EnableButton(false);
 
-            cboMode.Text = deviceModel.mode;
-            cboProtocol.Text = deviceModel.protocol;
-            cboCommPort.Text = (deviceModel.comm_port.ToString());
-            cboBitRate.Text = (deviceModel.bit_rate.ToString());
-            txtSendTimeout.Text = deviceModel.send_timeout.ToString();
-            txtSendInterval.Text = deviceModel.send_interval.ToString();
-            txtRetryTimes.Text = deviceModel.retry_times.ToString();
-            txtSMSValidity.Text = deviceModel.sms_validity.ToString();
-            cboFolder.Items.Add(deviceModel.folder);
-            if (deviceModel.auto_reject_incoming_call == 1)
-            {
-                chkAutoReject.Checked = true;
-            } else
-            {
-                chkAutoReject.Checked = false;
-            }
+        }
 
-            if (deviceModel.send_reject_incoming_call == 1)
-            {
-                chkSendReject.Checked = true;
-            }
-            else
-            {
-                chkSendReject.Checked = false;
-            }
-            
-            txtIsiPesan.Text = deviceModel.message_reject_incomming_call;
-
-
-            
+        private void EnableButton(bool state)
+        {
+            button5.Enabled = state;
+            button6.Enabled = state;
+            button7.Enabled = state;
+            button8.Enabled = state;
+            button9.Enabled = state;
+            button10.Enabled = state;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -124,13 +140,14 @@ namespace SMSCarpool.Views
                     return;
                 }
 
-                timer2.Interval = 60000;
+                timer2.Interval = string.IsNullOrWhiteSpace(txtSendInterval.Text)? 60000: int.Parse(txtSendInterval.Text) * 60000;
                 timer2.Enabled = true;
 
                 btnDisconnect.BackColor = Color.IndianRed;
                 btnDisconnect.Enabled = true;
                 btnConnect.Enabled = false;
                 btnConnect.BackColor = Color.Gray;
+                EnableButton(true);
             } else
             {
                 MessageBox.Show("Parameter Invalid!");
@@ -345,6 +362,7 @@ namespace SMSCarpool.Views
                 btnDisconnect.Enabled = false;
                 btnDisconnect.BackColor = Color.Gray;
                 btnConnect.BackColor = Color.DeepSkyBlue;
+                EnableButton(false);
             }
         }
 
@@ -356,6 +374,45 @@ namespace SMSCarpool.Views
         private void FrmDevice_FormClosing(object sender, FormClosingEventArgs e)
         {
             
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            //frmKonfigurasi = new FrmKonfigurasi(this);
+
+            Presenter.formClosing(frmKonfigurasi);
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("Are you sure want to delete all messages?","Delete all messages",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                modemService.DeleteSMS(DeleteScope.All, PhoneStorageType.Sim);
+                DGMessage.Rows.Clear();
+                DGMessage.Refresh();
+            }
+            
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            if (Presenter.UpdateModemConfig(deviceModel))
+            {
+                MessageBox.Show("Modem config updated successfully!");
+            } else
+            {
+                MessageBox.Show("Failed to update Modem config!");
+            }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DGMessage_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

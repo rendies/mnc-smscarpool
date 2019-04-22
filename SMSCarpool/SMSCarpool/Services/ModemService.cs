@@ -192,5 +192,35 @@ namespace SMSCarpool.Services
             return result;
         }
 
+        //
+        // Summary:
+        //     Delete message directly from connected modem
+        //
+        // Parameters:
+        //   scope:
+        //     Scope Delete (all/by index)
+        //
+        //   storage:
+        //     Message storage (SIM / Phone).
+        public Boolean DeleteSMS(DeleteScope scope, string storage)
+        {
+            bool result = false;
+            
+            try
+            {
+
+                comm.DeleteMessages(scope, storage);
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+
+            }
+
+            return result;
+        }
+
     }
 }

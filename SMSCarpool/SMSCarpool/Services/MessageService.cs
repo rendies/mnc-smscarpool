@@ -9,10 +9,12 @@ namespace SMSCarpool.Services
     public class MessageService
     {
         IDBConnectionService DBConnService;
+        IDBConnectionService DBConnService2;
 
         public MessageService()
         {
             DBConnService = new DBConnectionService(Properties.Settings.Default.ConnectionString);
+            DBConnService2 = new DBConnectionService(Properties.Settings.Default.ConnectionString2);
         }
 
         public List<MessageModel> CheckMessage()
@@ -57,6 +59,48 @@ namespace SMSCarpool.Services
             
         }
 
+        public List<MessageModel> CheckMessage2()
+        {
+            List<MessageModel> models = new List<MessageModel>();
+
+            try
+            {
+                var data = DBConnService2.Select("SELECT id, message, phone_number, process_at FROM messages " +
+                                                "WHERE status='0' ORDER BY id DESC LIMIT 1");
+
+                foreach (var row in data)
+                {
+                    if (row != null)
+                    {
+                        MessageModel model = new MessageModel();
+
+                        model.id = (int)row["id"];
+                        model.initial = "";
+                        model.jenis = row["type"].ToString();
+                        model.prefix = "";
+                        model.nama = "";
+                        model.pesan = row["message"].ToString();
+                        model.noTelp = row["phone_number"].ToString();
+                        DateTime.TryParse(row["process_at"].ToString(), out model.waktu);
+                        models.Add(model);
+                    }
+
+
+                }
+
+                DBConnService2.CloseConnection();
+
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+
+            return models;
+
+        }
+
         public void MessageProcessed(int id)
         {
             try
@@ -94,6 +138,45 @@ namespace SMSCarpool.Services
             catch (Exception ex)
             {
                 Console.WriteLine("Failed to Insert Message Sent Status");
+            }
+        }
+
+        public void MessageProcessed2(int id)
+        {
+            try
+            {
+                DBConnService2.Update("UPDATE messages SET status = '1', updated_at = '" + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss") + "', updated_by='Carpool System' WHERE id = " + id);
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Failed to Update Message Status");
+            }
+        }
+
+        public void MessageSent2(int id)
+        {
+            try
+            {
+                DBConnService2.Update("UPDATE messages SET status = '1', updated_at = '" + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss") + "', updated_by='Carpool System' WHERE id = " + id);
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Failed to Update Message Status");
+            }
+        }
+
+        public void MessageFail2(int id)
+        {
+            try
+            {
+                DBConnService2.Update("UPDATE messages SET status = '2', updated_at = '" + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss") + "', updated_by='Carpool System' WHERE id = " + id);
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Failed to Update Message Status");
             }
         }
     }

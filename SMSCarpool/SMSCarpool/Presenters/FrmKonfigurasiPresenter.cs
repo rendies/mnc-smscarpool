@@ -12,6 +12,7 @@ namespace SMSCarpool.Presenters
         IFrmKonfigurasi frmKonfigurasi;
         FrmKonfigurasiPresenter presenter;
         IDBConnectionService DBConnService;
+        IDBConnectionService DBConnService2;
 
         public FrmKonfigurasiPresenter(IFrmKonfigurasi frmKonfigurasiView)
         {
@@ -38,7 +39,7 @@ namespace SMSCarpool.Presenters
                 Properties.Settings.Default.DBName = dbName;
                 Properties.Settings.Default.UserName = userName;
                 Properties.Settings.Default.Password = password;
-                Properties.Settings.Default.ConnectionString = "Server = " + serverName + ";Uid = " + userName + ";Database = " + dbName + "; Pwd =" + password + "";
+                Properties.Settings.Default.ConnectionString = connectionString;
                 Properties.Settings.Default.Save();
 
                 return true;
@@ -51,6 +52,33 @@ namespace SMSCarpool.Presenters
             
         }
 
+        public bool initiateDBConnection2(string serverName, string dbName, string userName, string password)
+        {
+            string connectionString = "Server = " + serverName + ";Uid = " + userName + ";Database = " + dbName + "; Pwd =" + password + "";
+
+            DBConnService2 = new DBConnectionService(connectionString);
+
+            try
+            {
+                DBConnService2.OpenConnection();
+
+                Properties.Settings.Default.Server2 = serverName;
+                Properties.Settings.Default.DBName2 = dbName;
+                Properties.Settings.Default.UserName2 = userName;
+                Properties.Settings.Default.Password2 = password;
+                Properties.Settings.Default.ConnectionString2 = connectionString;
+                Properties.Settings.Default.Save();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return false;
+            }
+
+        }
+
         public void formClosing(IFrmDevice frmDevice)
         {
             frmDevice.ShowSelf();
@@ -59,18 +87,15 @@ namespace SMSCarpool.Presenters
 
         public bool chekcDBConnection()
         {
-            string serverName = Properties.Settings.Default.Server;
-            string dbName = Properties.Settings.Default.DBName;
-            string userName = Properties.Settings.Default.UserName;
-            string password = Properties.Settings.Default.Password;
-
-            string connectionString = "Server = " + serverName + ";Uid = " + userName + ";Database = " + dbName + "; Pwd =" + password + "";
-
-            DBConnService = new DBConnectionService(connectionString);
+            
+            DBConnService = new DBConnectionService(Properties.Settings.Default.ConnectionString);
+            DBConnService2 = new DBConnectionService(Properties.Settings.Default.ConnectionString2);
             try
             {
                 DBConnService.OpenConnection();
                 DBConnService.CloseConnection();
+                DBConnService2.OpenConnection();
+                DBConnService2.CloseConnection();
                 return true;
 
             } catch (Exception ex)

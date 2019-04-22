@@ -36,8 +36,8 @@ namespace SMSCarpool
             if (frmDevice.frmKonfigurasi.Presenter.chekcDBConnection())
             {
                 //frmDevice.mShowAllowed = false;
-                frmDevice.Visible = false;
-                frmDevice.frmKonfigurasi.ShowSelf();
+                frmDevice.Visible = true;
+                frmDevice.ShowSelf();
 
             } else
             {
