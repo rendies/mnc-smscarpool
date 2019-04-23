@@ -35,11 +35,12 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.label28 = new System.Windows.Forms.Label();
             this.txtPushURL = new System.Windows.Forms.TextBox();
             this.chkWAPPushURL = new System.Windows.Forms.CheckBox();
             this.panelSMSType = new System.Windows.Forms.Panel();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.rbtnSMSType2 = new System.Windows.Forms.RadioButton();
             this.rbtnSMSType = new System.Windows.Forms.RadioButton();
             this.chkAutoDeleteAllReports = new System.Windows.Forms.CheckBox();
             this.chkAutoDeleteNewSMS = new System.Windows.Forms.CheckBox();
@@ -78,7 +79,6 @@
             this.tabDevice = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label27 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.button6 = new System.Windows.Forms.Button();
             this.textBox17 = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
@@ -127,7 +127,8 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.timer3 = new System.Windows.Forms.Timer(this.components);
-            this.button1 = new System.Windows.Forms.Button();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.panelSMSType.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -137,6 +138,7 @@
             this.tabMemoryPesan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGMessage)).BeginInit();
             this.tabKirimPesan.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnConnect
@@ -231,10 +233,23 @@
             this.groupBox1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 75);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(507, 635);
+            this.groupBox1.Size = new System.Drawing.Size(507, 627);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Setting Device";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(109, 596);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(103, 33);
+            this.button1.TabIndex = 42;
+            this.button1.Text = "Save Changes";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // label28
             // 
@@ -264,23 +279,23 @@
             // 
             // panelSMSType
             // 
-            this.panelSMSType.Controls.Add(this.radioButton1);
+            this.panelSMSType.Controls.Add(this.rbtnSMSType2);
             this.panelSMSType.Controls.Add(this.rbtnSMSType);
             this.panelSMSType.Location = new System.Drawing.Point(97, 536);
             this.panelSMSType.Name = "panelSMSType";
             this.panelSMSType.Size = new System.Drawing.Size(255, 20);
             this.panelSMSType.TabIndex = 29;
             // 
-            // radioButton1
+            // rbtnSMSType2
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(125, 0);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(81, 19);
-            this.radioButton1.TabIndex = 29;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Flash SMS";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rbtnSMSType2.AutoSize = true;
+            this.rbtnSMSType2.Location = new System.Drawing.Point(125, 0);
+            this.rbtnSMSType2.Name = "rbtnSMSType2";
+            this.rbtnSMSType2.Size = new System.Drawing.Size(81, 19);
+            this.rbtnSMSType2.TabIndex = 29;
+            this.rbtnSMSType2.TabStop = true;
+            this.rbtnSMSType2.Text = "Flash SMS";
+            this.rbtnSMSType2.UseVisualStyleBackColor = true;
             // 
             // rbtnSMSType
             // 
@@ -352,7 +367,7 @@
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(40, 371);
+            this.label10.Location = new System.Drawing.Point(40, 367);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(63, 15);
             this.label10.TabIndex = 20;
@@ -565,7 +580,7 @@
             this.toolStripStatusLabel3,
             this.toolStripStatusLabel4,
             this.toolStripStatusLabel5});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 713);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 705);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(1101, 28);
             this.statusStrip1.TabIndex = 5;
@@ -624,10 +639,10 @@
             this.tabControl1.Controls.Add(this.tabMemoryPesan);
             this.tabControl1.Controls.Add(this.tabKirimPesan);
             this.tabControl1.HotTrack = true;
-            this.tabControl1.Location = new System.Drawing.Point(525, 75);
+            this.tabControl1.Location = new System.Drawing.Point(7, 19);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(534, 635);
+            this.tabControl1.Size = new System.Drawing.Size(534, 602);
             this.tabControl1.TabIndex = 0;
             // 
             // tabDevice
@@ -636,7 +651,7 @@
             this.tabDevice.Location = new System.Drawing.Point(4, 25);
             this.tabDevice.Name = "tabDevice";
             this.tabDevice.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDevice.Size = new System.Drawing.Size(526, 606);
+            this.tabDevice.Size = new System.Drawing.Size(526, 573);
             this.tabDevice.TabIndex = 0;
             this.tabDevice.Text = "1. Device";
             this.tabDevice.UseVisualStyleBackColor = true;
@@ -673,7 +688,7 @@
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Location = new System.Drawing.Point(6, 6);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(514, 576);
+            this.groupBox2.Size = new System.Drawing.Size(514, 565);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Informasi Device :";
@@ -686,14 +701,6 @@
             this.label27.Size = new System.Drawing.Size(61, 13);
             this.label27.TabIndex = 41;
             this.label27.Text = "1,160,GSM";
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(127, 507);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(360, 69);
-            this.listBox1.TabIndex = 38;
             // 
             // button6
             // 
@@ -760,6 +767,7 @@
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(360, 23);
             this.progressBar1.TabIndex = 31;
+            this.progressBar1.Visible = false;
             // 
             // button5
             // 
@@ -954,7 +962,7 @@
             this.tabMemoryPesan.Location = new System.Drawing.Point(4, 25);
             this.tabMemoryPesan.Name = "tabMemoryPesan";
             this.tabMemoryPesan.Padding = new System.Windows.Forms.Padding(3);
-            this.tabMemoryPesan.Size = new System.Drawing.Size(526, 606);
+            this.tabMemoryPesan.Size = new System.Drawing.Size(526, 573);
             this.tabMemoryPesan.TabIndex = 1;
             this.tabMemoryPesan.Text = "2. Memory Pesan";
             this.tabMemoryPesan.UseVisualStyleBackColor = true;
@@ -1017,7 +1025,7 @@
             this.button9.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button9.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.Location = new System.Drawing.Point(234, 14);
+            this.button9.Location = new System.Drawing.Point(125, 14);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(103, 33);
             this.button9.TabIndex = 40;
@@ -1030,12 +1038,13 @@
             this.button8.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button8.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Location = new System.Drawing.Point(125, 14);
+            this.button8.Location = new System.Drawing.Point(234, 14);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(103, 33);
             this.button8.TabIndex = 39;
             this.button8.Text = "Process";
             this.button8.UseVisualStyleBackColor = false;
+            this.button8.Visible = false;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button7
@@ -1061,7 +1070,7 @@
             this.tabKirimPesan.Controls.Add(this.label24);
             this.tabKirimPesan.Location = new System.Drawing.Point(4, 25);
             this.tabKirimPesan.Name = "tabKirimPesan";
-            this.tabKirimPesan.Size = new System.Drawing.Size(526, 606);
+            this.tabKirimPesan.Size = new System.Drawing.Size(526, 573);
             this.tabKirimPesan.TabIndex = 2;
             this.tabKirimPesan.Text = "3. Kirim Pesan";
             this.tabKirimPesan.UseVisualStyleBackColor = true;
@@ -1101,7 +1110,7 @@
             this.label25.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(64, 72);
+            this.label25.Location = new System.Drawing.Point(64, 55);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(63, 15);
             this.label25.TabIndex = 14;
@@ -1121,7 +1130,7 @@
             this.label24.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(59, 46);
+            this.label24.Location = new System.Drawing.Point(59, 29);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(68, 15);
             this.label24.TabIndex = 12;
@@ -1142,31 +1151,36 @@
             // 
             this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
             // 
-            // button1
+            // listBox1
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(109, 596);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(103, 33);
-            this.button1.TabIndex = 42;
-            this.button1.Text = "Save Changes";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(127, 507);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(360, 43);
+            this.listBox1.TabIndex = 38;
+            this.listBox1.Visible = false;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.tabControl1);
+            this.groupBox3.Location = new System.Drawing.Point(542, 76);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(547, 623);
+            this.groupBox3.TabIndex = 6;
+            this.groupBox3.TabStop = false;
             // 
             // FrmDevice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1101, 741);
-            this.Controls.Add(this.tabControl1);
+            this.ClientSize = new System.Drawing.Size(1101, 733);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.btnDisconnect);
             this.Controls.Add(this.btnConnect);
+            this.Controls.Add(this.groupBox3);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmDevice";
             this.Text = "SMS CARPOOL";
@@ -1186,6 +1200,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.DGMessage)).EndInit();
             this.tabKirimPesan.ResumeLayout(false);
             this.tabKirimPesan.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1213,7 +1228,7 @@
         private System.Windows.Forms.TextBox txtPushURL;
         private System.Windows.Forms.CheckBox chkWAPPushURL;
         private System.Windows.Forms.Panel panelSMSType;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton rbtnSMSType2;
         private System.Windows.Forms.RadioButton rbtnSMSType;
         private System.Windows.Forms.CheckBox chkAutoDeleteAllReports;
         private System.Windows.Forms.CheckBox chkAutoDeleteNewSMS;
@@ -1258,7 +1273,6 @@
         private System.Windows.Forms.TabPage tabMemoryPesan;
         private System.Windows.Forms.TabPage tabKirimPesan;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.TextBox textBox17;
         private System.Windows.Forms.Label label23;
@@ -1291,5 +1305,7 @@
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Timer timer3;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.GroupBox groupBox3;
     }
 }

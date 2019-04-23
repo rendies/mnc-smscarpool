@@ -32,10 +32,10 @@ namespace SMSCarpool.Views
             string userName = txtUserName.Text;
             string password = txtPassword.Text;
 
-            string serverName2 = txtServerName.Text;
-            string dbName2 = txtDatabase.Text;
-            string userName2 = txtUserName.Text;
-            string password2 = txtPassword.Text;
+            string serverName2 = txtServerName2.Text;
+            string dbName2 = txtDatabase2.Text;
+            string userName2 = txtUserName2.Text;
+            string password2 = txtPassword2.Text;
 
             var result1 = Presenter.initiateDBConnection(serverName, dbName, userName, password);
             var result2 = Presenter.initiateDBConnection2(serverName2, dbName2, userName2, password2);

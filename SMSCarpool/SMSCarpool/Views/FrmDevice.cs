@@ -12,6 +12,7 @@ using SMSCarpool.Models;
 using SMSCarpool.Services;
 using GsmComm.PduConverter;
 using System.Threading;
+using System.Text.RegularExpressions;
 
 namespace SMSCarpool.Views
 {
@@ -79,25 +80,57 @@ namespace SMSCarpool.Views
             txtRetryTimes.Text = model.retry_times.ToString();
             txtSMSValidity.Text = model.sms_validity.ToString();
             cboFolder.Items.Add(model.folder);
-            if (model.auto_reject_incoming_call == 1)
-            {
-                chkAutoReject.Checked = true;
-            }
-            else
-            {
-                chkAutoReject.Checked = false;
-            }
-
-            if (model.send_reject_incoming_call == 1)
-            {
-                chkSendReject.Checked = true;
-            }
-            else
-            {
-                chkSendReject.Checked = false;
-            }
-
+            chkAutoReject.Checked = (model.auto_reject_incoming_call == 1) ? true : false;
+            chkSendReject.Checked = (model.send_reject_incoming_call == 1) ? true : false;
+            chkRequestSendReport.Checked = (model.request_send_report == 1) ? true : false;
             txtIsiPesan.Text = model.message_reject_incomming_call;
+            chkAutoDeleteNewSMS.Checked = model.auto_delete_new_sms == 1 ? true : false;
+            chkAutoDeleteAllReports.Checked = model.auto_delete_all_report == 1 ? true : false;
+            TxtCekPulsa.Text = model.nomor_cek_pulsa;
+            TxtNomorHP.Text = model.nomor_hp_ini;
+            switch (model.sms_type.ToLower())
+            {
+                case "standar":
+                    rbtnSMSType.Checked = true;
+                    break;
+                case "flash":
+                    rbtnSMSType2.Checked = true;
+                    break;
+                case "wap":
+                    chkWAPPushURL.Checked = true;
+                    break;
+                default:
+                    break;
+            }
+
+            txtPushURL.Text = model.wap_push_url;
+            
+        }
+
+        private void BindingData()
+        {
+            deviceModel.mode = cboMode.Text;
+            deviceModel.protocol = cboProtocol.Text;
+            deviceModel.comm_port = int.Parse(cboCommPort.Text);
+            deviceModel.bit_rate = int.Parse(cboBitRate.Text);
+            deviceModel.send_timeout = int.Parse(txtSendTimeout.Text);
+            deviceModel.send_interval = int.Parse(txtSendInterval.Text);
+            deviceModel.retry_times = int.Parse(txtRetryTimes.Text);
+            deviceModel.sms_validity = txtSMSValidity.Text;
+            deviceModel.folder = cboFolder.SelectedText;
+
+            deviceModel.auto_reject_incoming_call = chkAutoReject.Checked ? 1 : 0;
+            deviceModel.send_reject_incoming_call = chkSendReject.Checked ? 1 : 0;
+            deviceModel.request_send_report = chkRequestSendReport.Checked ? 1 : 0;
+            deviceModel.message_reject_incomming_call = txtIsiPesan.Text;
+            deviceModel.auto_delete_new_sms = chkAutoDeleteNewSMS.Checked ? 1 : 0;
+            deviceModel.auto_delete_all_report = chkAutoDeleteAllReports.Checked ? 1 : 0;
+            
+            deviceModel.sms_type = rbtnSMSType.Checked == true ? "Standar" : deviceModel.sms_type;
+            deviceModel.sms_type = rbtnSMSType2.Checked == true ? "Flash" : deviceModel.sms_type;
+            deviceModel.sms_type = chkWAPPushURL.Checked == true ? "Wap" : deviceModel.sms_type;
+            deviceModel.wap_push_url = txtPushURL.Text;
+
         }
 
         private void FrmDevice_Load(object sender, EventArgs e)
@@ -148,6 +181,11 @@ namespace SMSCarpool.Views
                 btnConnect.Enabled = false;
                 btnConnect.BackColor = Color.Gray;
                 EnableButton(true);
+                if(chkAutoReject.Checked == true)
+                {
+                    RejectIncomingCall();
+                }
+                
             } else
             {
                 MessageBox.Show("Parameter Invalid!");
@@ -158,7 +196,8 @@ namespace SMSCarpool.Views
         // Refresh Modem Info
         private void button5_Click(object sender, EventArgs e)
         {
-            
+            Cursor = Cursors.WaitCursor;
+            EnableButton(false);
             bool result = false;
             try
             {
@@ -180,21 +219,24 @@ namespace SMSCarpool.Views
             {
                 Console.WriteLine(ex.ToString());
             }
-           
-            
+            Cursor = Cursors.Arrow;
+            EnableButton(true);
+
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
-            
+            Cursor = Cursors.WaitCursor;
+            EnableButton(false);
             bool result = false;
             if (modemService.IsModemConnected())
             {
                 result = modemService.SendSMS(txtNomorHPManual.Text, txtPesanManual.Text);
 
             }
-
-            if(result)
+            Cursor = Cursors.Arrow;
+            EnableButton(true);
+            if (result)
             {
                 MessageBox.Show("SMS Sent!");
             } else
@@ -210,24 +252,85 @@ namespace SMSCarpool.Views
             
         }
 
+        public string RejectIncomingCall()
+        {
+            var result = "";
+            try
+            {
+                IProtocol protocol = modemService.comm.GetProtocol();
+                string gottenString = protocol.ExecAndReceiveMultiple("AT+CVHU=1");
+                
+            }
+            catch (Exception ex)
+            {
+                result = null;
+            }
+            finally
+            {
+                modemService.comm.ReleaseProtocol();
+            }
+            return result;
+        }
+
+        public string SendUssdRequest(string request)
+        {
+            string data = TextDataConverter.StringTo7Bit(request);
+            string result = null;
+            var asPDUencoded = Calc.IntToHex(TextDataConverter.SeptetsToOctetsInt(data));
+            try
+            {
+                IProtocol protocol = modemService.comm.GetProtocol();
+                string gottenString = protocol.ExecAndReceiveMultiple("AT+CUSD=1," + asPDUencoded + ",15");
+                var re = new Regex("\".*?\"");
+                int i = 0;
+                if (!re.IsMatch(gottenString))
+                {
+                    do
+                    {
+                        protocol.Receive(out gottenString);
+                        ++i;
+                    } while (!(i >= 5
+                                || re.IsMatch(gottenString)
+                                || gottenString.Contains("\r\nOK")
+                                || gottenString.Contains("\r\nERROR")
+                                || gottenString.Contains("\r\nDONE"))); //additional tests "just in case"
+                }
+                string m = re.Match(gottenString).Value.Trim('"');
+                result = PduParts.Decode7BitText(Calc.HexToInt(m));
+            }
+            catch (Exception ex){
+                result = null;
+            }
+            finally
+            {
+                modemService.comm.ReleaseProtocol();
+            }
+            return result;
+        }
+
         private void button6_Click(object sender, EventArgs e)
         {
-            
-            bool result = false;
+            Cursor = Cursors.WaitCursor;
+            EnableButton(false);
+            string result = null;
             if (modemService.IsModemConnected())
             {
-                result = modemService.SendSMS(txtNomorHPManual.Text, txtPesanManual.Text);
+                result = SendUssdRequest(TxtCekPulsa.Text);
+                //result = modemService.SendSMS(txtNomorHPManual.Text, txtPesanManual.Text);
 
             }
-
-            if (result)
+            Cursor = Cursors.Arrow;
+            EnableButton(true);
+            if (!string.IsNullOrEmpty(result))
             {
-                MessageBox.Show("SMS Sent!");
+                //MessageBox.Show("SMS Sent!");
+                textBox17.Text = result;
             }
             else
             {
-                MessageBox.Show("Failed to send sms!");
+                MessageBox.Show("Device is not supported!");
             }
+
         }
 
         private void tabMemoryPesan_Click(object sender, EventArgs e)
@@ -237,7 +340,8 @@ namespace SMSCarpool.Views
 
         private void button7_Click(object sender, EventArgs e)
         {
-            
+            Cursor = Cursors.WaitCursor;
+            EnableButton(false);
             bool result = false;
             
 
@@ -283,6 +387,9 @@ namespace SMSCarpool.Views
             {
                 //ShowException(ex);
             }
+
+            Cursor = Cursors.Arrow;
+            EnableButton(true);
         }
 
         private string StatusToString(PhoneMessageStatus status)
@@ -351,6 +458,31 @@ namespace SMSCarpool.Views
             }
         }
 
+        public void runThreadWAP()
+        {
+            var thread = _thread;
+            //Prevent optimization from not using the local variable
+            Thread.MemoryBarrier();
+            if
+            (
+                thread == null ||
+                thread.ThreadState == System.Threading.ThreadState.Stopped
+            )
+            {
+                var newThread = new Thread(Presenter.SendMessageWAP);
+                newThread.IsBackground = true;
+                newThread.Name = "SendMessageThread";
+                newThread.Start();
+                //Prevent optimization from setting the field before calling Start
+                Thread.MemoryBarrier();
+                _thread = newThread;
+            }
+            else
+            {
+                System.Diagnostics.Debug.WriteLine("SendMessageThread already Running.");
+            }
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
             if (
@@ -358,12 +490,17 @@ namespace SMSCarpool.Views
             )
             {
                 _thread.Abort();
-                btnConnect.Enabled = true;
-                btnDisconnect.Enabled = false;
-                btnDisconnect.BackColor = Color.Gray;
-                btnConnect.BackColor = Color.DeepSkyBlue;
-                EnableButton(false);
+                
             }
+
+            btnConnect.Enabled = true;
+            btnDisconnect.Enabled = false;
+            btnDisconnect.BackColor = Color.Gray;
+            btnConnect.BackColor = Color.DeepSkyBlue;
+            timer2.Enabled = false;
+            timer2.Stop();
+            modemService.comm.Close();
+            EnableButton(false);
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -385,17 +522,25 @@ namespace SMSCarpool.Views
 
         private void button9_Click(object sender, EventArgs e)
         {
+
             if(MessageBox.Show("Are you sure want to delete all messages?","Delete all messages",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
             {
+                Cursor = Cursors.WaitCursor;
+                EnableButton(false);
                 modemService.DeleteSMS(DeleteScope.All, PhoneStorageType.Sim);
                 DGMessage.Rows.Clear();
                 DGMessage.Refresh();
+                Cursor = Cursors.Arrow;
+                EnableButton(true);
             }
             
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
+
+            BindingData();
+
             if (Presenter.UpdateModemConfig(deviceModel))
             {
                 MessageBox.Show("Modem config updated successfully!");
@@ -407,7 +552,7 @@ namespace SMSCarpool.Views
 
         private void button8_Click(object sender, EventArgs e)
         {
-
+           
         }
 
         private void DGMessage_CellContentClick(object sender, DataGridViewCellEventArgs e)

@@ -88,6 +88,43 @@ namespace SMSCarpool.Presenters
             }
         }
 
+        public void SendMessageWAP()
+        {
+
+            List<MessageModel> datas = messageService.CheckMessage();
+            List<MessageModel> datas2 = messageService.CheckMessage2();
+            String url = messageService.GetWAPServerURL();
+            foreach (MessageModel data in datas)
+            {
+                if (modemService.SendSMS(data.noTelp, data.pesan, url))
+                {
+                    messageService.MessageFail(data);
+                }
+                else
+                {
+                    messageService.MessageSent(data);
+                }
+
+                messageService.MessageProcessed(data.id);
+
+            }
+
+            foreach (MessageModel data in datas2)
+            {
+                if (modemService.SendSMS(data.noTelp, data.pesan))
+                {
+                    messageService.MessageFail2(data.id);
+                }
+                else
+                {
+                    messageService.MessageSent2(data.id);
+                }
+
+                messageService.MessageProcessed2(data.id);
+
+            }
+        }
+
         public void ModemConnect(int id, string initial)
         {
             DeviceModel model = GetModemConfig(id, initial);

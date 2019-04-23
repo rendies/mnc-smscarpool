@@ -65,7 +65,7 @@ namespace SMSCarpool.Services
 
             try
             {
-                var data = DBConnService2.Select("SELECT id, message, phone_number, process_at FROM messages " +
+                var data = DBConnService2.Select("SELECT id, message, phone_number, process_at, type, `status` FROM messages " +
                                                 "WHERE status='0' ORDER BY id DESC LIMIT 1");
 
                 foreach (var row in data)
@@ -98,6 +98,37 @@ namespace SMSCarpool.Services
             }
 
             return models;
+
+        }
+
+        public string GetWAPServerURL()
+        {
+            string result = "";
+
+            try
+            {
+                var data = DBConnService2.Select("SELECT wap_push_url FROM `sms_modem`");
+                foreach (var row in data)
+                {
+                    if (row != null)
+                    {
+                        result = row["wap_push_url"].ToString();
+                        
+                    }
+
+
+                }
+
+                DBConnService2.CloseConnection();
+
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+
+            return result;
 
         }
 

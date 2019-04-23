@@ -172,24 +172,21 @@ namespace SMSCarpool.Services
         //      Server URL address
         public Boolean SendSMS(string noHP, string pesan, string url)
         {
-            bool result = false;
-
+            url = string.Format("tcp://{0}/SMSSender", url);
+            
             try
             {
+                ISmsSender smsSender = (ISmsSender)Activator.GetObject(typeof(ISmsSender), url);
+                    
+                smsSender.SendMessage(pesan, noHP); // Standard message
 
-                SmsSubmitPdu pdu = new SmsSubmitPdu(pesan, noHP);
-
-                comm.SendMessage(pdu);
-
-                return true;
+                return true;          
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.ToString());
-
+                
             }
-
-            return result;
+            return false;
         }
 
         //
@@ -221,6 +218,8 @@ namespace SMSCarpool.Services
 
             return result;
         }
+
+
 
     }
 }
