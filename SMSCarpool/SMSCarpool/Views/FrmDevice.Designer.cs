@@ -79,6 +79,7 @@
             this.tabDevice = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label27 = new System.Windows.Forms.Label();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.button6 = new System.Windows.Forms.Button();
             this.textBox17 = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
@@ -127,7 +128,6 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.timer3 = new System.Windows.Forms.Timer(this.components);
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.panelSMSType.SuspendLayout();
@@ -702,6 +702,15 @@
             this.label27.TabIndex = 41;
             this.label27.Text = "1,160,GSM";
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(127, 507);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(360, 43);
+            this.listBox1.TabIndex = 38;
+            this.listBox1.Visible = false;
+            // 
             // button6
             // 
             this.button6.BackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -1151,15 +1160,6 @@
             // 
             this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
             // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(127, 507);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(360, 43);
-            this.listBox1.TabIndex = 38;
-            this.listBox1.Visible = false;
-            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.tabControl1);
@@ -1184,7 +1184,6 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmDevice";
             this.Text = "SMS CARPOOL";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmDevice_FormClosing);
             this.Load += new System.EventHandler(this.FrmDevice_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

@@ -47,8 +47,8 @@ namespace SMSCarpool.Presenters
 
         public void formClosing(IFrmKonfigurasi frmKonfigurasi)
         {
-            frmKonfigurasi.ShowSelf();
-            frmDevice.HideSelf();
+            frmKonfigurasi.ShowDialogSelf();
+            //frmDevice.HideSelf();
             
         }
 

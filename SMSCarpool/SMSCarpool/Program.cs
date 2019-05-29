@@ -42,7 +42,7 @@ namespace SMSCarpool
             } else
             {
                 frmDevice.Visible = false;
-                frmDevice.frmKonfigurasi.ShowSelf();
+                frmDevice.frmKonfigurasi.ShowDialogSelf();
 
             }
 

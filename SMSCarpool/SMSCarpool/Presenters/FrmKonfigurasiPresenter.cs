@@ -11,8 +11,8 @@ namespace SMSCarpool.Presenters
     {
         IFrmKonfigurasi frmKonfigurasi;
         FrmKonfigurasiPresenter presenter;
-        IDBConnectionService DBConnService;
-        IDBConnectionService DBConnService2;
+        DBConnectionService DBConnService;
+        DBConnectionService DBConnService2;
 
         public FrmKonfigurasiPresenter(IFrmKonfigurasi frmKonfigurasiView)
         {
@@ -34,6 +34,7 @@ namespace SMSCarpool.Presenters
 
             try{
                 DBConnService.OpenConnection();
+                DBConnService.Count("select count(id) from sms_modem");
 
                 Properties.Settings.Default.Server = serverName;
                 Properties.Settings.Default.DBName = dbName;
@@ -92,8 +93,10 @@ namespace SMSCarpool.Presenters
             DBConnService2 = new DBConnectionService(Properties.Settings.Default.ConnectionString2);
             try
             {
-                DBConnService.OpenConnection();
-                DBConnService.CloseConnection();
+                //DBConnService.OpenConnection();
+               
+                //DBConnService.CloseConnection();
+                var data = DBConnService.Count("SELECT count(id)  From sms_modem ");
                 DBConnService2.OpenConnection();
                 DBConnService2.CloseConnection();
                 return true;

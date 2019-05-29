@@ -111,7 +111,7 @@ namespace SMSCarpool.Views
             string userName2 = txtUserName2.Text;
             string password2 = txtPassword2.Text;
 
-            if (Presenter.initiateDBConnection(serverName, dbName, userName, password) && Presenter.initiateDBConnection(serverName2, dbName2, userName2, password2))
+            if (Presenter.initiateDBConnection(serverName, dbName, userName, password) && Presenter.initiateDBConnection2(serverName2, dbName2, userName2, password2))
             {
                 return true;
             }
@@ -134,7 +134,15 @@ namespace SMSCarpool.Views
 
         private void button2_Click(object sender, EventArgs e)
         {
+            txtServerName.Text = "172.17.20.32";
+            txtDatabase.Text = "db_mnccarpool";
+            txtUserName.Text = "root";
+            txtPassword.Text = "password.1";
 
+            txtServerName2.Text = "172.17.20.32";
+            txtDatabase2.Text = "db_sms";
+            txtUserName2.Text = "root";
+            txtPassword2.Text = "password.1";
         }
 
         private void FrmKonfigurasi_FormClosed(object sender, FormClosedEventArgs e)

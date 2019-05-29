@@ -143,7 +143,15 @@ namespace SMSCarpool.Views
             
 
             deviceModel = Presenter.GetModemConfig(8, "-");
-            SetModemConfig(deviceModel);
+            try
+            {
+                SetModemConfig(deviceModel);
+            }
+            catch (Exception ex)
+            {
+
+            }
+            
             EnableButton(false);
 
         }
@@ -386,6 +394,7 @@ namespace SMSCarpool.Views
             catch (Exception ex)
             {
                 //ShowException(ex);
+                MessageBox.Show(ex.Message, "Error Occured when accesing modem!");
             }
 
             Cursor = Cursors.Arrow;
@@ -510,7 +519,6 @@ namespace SMSCarpool.Views
 
         private void FrmDevice_FormClosing(object sender, FormClosingEventArgs e)
         {
-            
         }
 
         private void button3_Click(object sender, EventArgs e)
